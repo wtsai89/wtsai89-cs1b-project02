@@ -5,7 +5,7 @@ package cellularData;
  *  Given a country name and a range of years, computes the total number of subscriptions
  *  during that period.
  *
- *  @author Foothill College, Bita M, [YOUR NAME HERE]
+ *  @author William Tsai
  */
 public class TestCellularData 
 {
