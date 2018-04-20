@@ -1,7 +1,7 @@
 package cellularData;
 
 /**
- *
+ *Class represents a table containing all cellular data for different countries
  */
 public class CellularData {
     private double table[][];
@@ -10,6 +10,12 @@ public class CellularData {
     private int numberOfCountries, numberOfSubs, startingYear, endingYear;
     private int lastFilledRow = 0;
 
+    /**
+     * Constructor for CellularData
+     * @param rows represents number of countries
+     * @param cols represents number of subscriptions
+     * @param sYear represents the starting year
+     */
     public CellularData(int rows, int cols, int sYear)
     {
         table = new double[rows][cols];
@@ -26,6 +32,11 @@ public class CellularData {
         }
     }
 
+    /**
+     * Adds a country to the table
+     * @param country
+     * @param data one-dimensional array of yearly subscriptions for the country
+     */
     public void addCountry(String country, double[] data)
     {
         countries[lastFilledRow] = country;
@@ -33,6 +44,13 @@ public class CellularData {
         lastFilledRow++;
     }
 
+    /**
+     * The starting year and ending year must fall within the appropriate range of the table other wise an error will be generated.
+     * @param country
+     * @param start starting year
+     * @param end ending year
+     * @return the number of subsciptions in the country for the period
+     */
     public double getNumSubscriptionsInCountryForPeriod(String country, int start, int end)
     {
         double sum = 0;
@@ -72,6 +90,11 @@ public class CellularData {
         }
     }
 
+    /**
+     * Used to locate the row index for the country in the table
+     * @param country
+     * @return
+     */
     public int getCountryIndex(String country)
     {
         for(int i = 0; i < countries.length; i++)
@@ -81,6 +104,10 @@ public class CellularData {
         return -1;
     }
 
+    /**
+     * overrides the Object class
+     * @return
+     */
     public String toString()
     {
         String s = "Country       | Year";
