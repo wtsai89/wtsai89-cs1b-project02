@@ -1,10 +1,20 @@
-// TODO: For every project create a README file at the top-level directory of 
-//       your project. Your README must include a list of .java files you are 
-//       submitting and a brief description of each. You may ignore IDE specific 
-//       files such as .gitignore 
+project folder:
+wtsai89-cs1b-project02/
 
-// NOTE: Alternatively you can create this file in Markdown format. 
-//       See the tutorial:
-//       https://guides.github.com/features/mastering-markdown/
 
-testing testing 123 more testing testing
+Brief description of submitted files:
+
+src/CellularData.java
+    - Class represents a table containing all cellular data for different countries
+
+src/TestCellularData.java
+    - Main application tests the CellularData class
+
+resources/cellular_short_oneDecade.csv
+    - partial table for cellular data
+
+resources/cellular.csv
+    - complete table for cellular data
+
+resources/RUN.txt
+    - output of TestCellularData's class

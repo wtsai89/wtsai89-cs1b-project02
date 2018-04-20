@@ -5,7 +5,7 @@ package cellularData;
  *  Given a country name and a range of years, computes the total number of subscriptions
  *  during that period.
  *
- *  @author Foothill College, Bita M, [YOUR NAME HERE]
+ *  @author William Tsai
  */
 public class TestCellularData 
 {
@@ -144,5 +144,73 @@ public class TestCellularData
 		//
 		// TODO: Also, make sure to test for other invalid requests.
 		//
+
+		final double[] afghanistan = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.112598381,0.865196277,2.498055472,4.826865367,9.833164022,17.71624331,29.22037376,37.89493697,45.77817474,60.32631999,65.45219346,70.66135885,74.88284241};
+		final double[] albania = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.068840778,0.099059921,0.168397958,0.331772024,0.901406013,11.94887288,26.07553141,33.95706284,39.16395669,47.87802749,60.06734238,73.35038415,58.91235149,78.1845877,85.468247,98.29153459,110.6865316,116.1572081,105.4699657};
+		final double[] algeria = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.001791178,0.017777422,0.017363261,0.016979454,0.004688247,0.016001794,0.039202273,0.057339703,0.05840281,0.230206295,0.27112703,0.311040075,1.382262358,4.384169991,14.59120666,40.22671305,60.85091077,78.53288666,75.6646235,89.95836607,88.44487548,94.31443964,97.52089467,100.7877205,92.94793073};
+
+		/*
+		 * Test Case 3
+		 */
+		System.out.println("\n\nTest Case 3: ");
+		startingYear = 1960;
+
+		numRows = 4;
+		numColumns = afghanistan.length;
+
+		datatable = new CellularData(numRows, numColumns, startingYear);
+
+		datatable.addCountry("United States", usa);
+		datatable.addCountry("Mexico", mexico);
+		datatable.addCountry("Canada", canada);
+		datatable.addCountry("Afghanistan", afghanistan);
+
+		System.out.println(datatable);
+
+		totalSubscriptions = datatable.getNumSubscriptionsInCountryForPeriod("United States",1983,1989);
+		System.out.printf("United States (1983 to 1989): %.2f \n", totalSubscriptions);
+		// the output is:
+		// United States (1983 to 1989): 3.18
+
+		totalSubscriptions = datatable.getNumSubscriptionsInCountryForPeriod("Afghanistan",1977,2012);
+		System.out.printf("Afghanistan (1977 to 2012): %.2f \n", totalSubscriptions);
+
+		totalSubscriptions = datatable.getNumSubscriptionsInCountryForPeriod("Bangladesh",1963,2000);
+		System.out.printf("Bangladesh (1963 to 2000): %.2f \n", totalSubscriptions);
+
+
+		/*
+		 * Test Case 4
+		 */
+		System.out.println("\n\nTest Case 4: ");
+		startingYear = 1960;
+
+		numRows = 6;
+		numColumns = afghanistan.length;
+
+		datatable = new CellularData(numRows, numColumns, startingYear);
+
+		datatable.addCountry("Algeria", algeria);
+		datatable.addCountry("United States", usa);
+		datatable.addCountry("Albania", albania);
+		datatable.addCountry("Mexico", mexico);
+		datatable.addCountry("Afghanistan", afghanistan);
+		datatable.addCountry("Canada", canada);
+
+		System.out.println(datatable);
+
+		totalSubscriptions = datatable.getNumSubscriptionsInCountryForPeriod("Mexico",1960,2000);
+		System.out.printf("Mexico (1960 to 2000): %.2f \n", totalSubscriptions);
+		// the output is:
+		// Mexico (1960 to 2000): 29.62
+
+		totalSubscriptions = datatable.getNumSubscriptionsInCountryForPeriod("Afghanistan",1977,2012);
+		System.out.printf("Afghanistan (1977 to 2012): %.2f \n", totalSubscriptions);
+
+		totalSubscriptions = datatable.getNumSubscriptionsInCountryForPeriod("Algeria",1984,1999);
+		System.out.printf("Algeria (1984 to 1999): %.2f \n", totalSubscriptions);
+
+		totalSubscriptions = datatable.getNumSubscriptionsInCountryForPeriod("Canada",1882,1955);
+		System.out.printf("Canada (1882 to 1955): %.2f \n", totalSubscriptions);
 	}
 }
